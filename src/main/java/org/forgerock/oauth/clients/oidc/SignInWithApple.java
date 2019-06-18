@@ -155,7 +155,9 @@ public class SignInWithApple extends AbstractSocialAuthLoginNode {
          * @return the provider.
          */
         @Attribute(order = 800)
-        String provider();
+        default String provider() {
+            return "Apple ID";
+        }
 
         /**
          * The authentication id key.
@@ -247,8 +249,9 @@ public class SignInWithApple extends AbstractSocialAuthLoginNode {
          * @return the issuer.
          */
         @Attribute(order = 1800)
-        String issuer();
-
+        default String issuer() {
+            return "https://appleid.apple.com";
+        }
         /**
          * The openid connect validation method.
          * @return the openid connect validation method.
