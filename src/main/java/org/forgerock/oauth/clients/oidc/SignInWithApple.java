@@ -247,7 +247,9 @@ public class SignInWithApple extends AbstractSocialAuthLoginNode {
          * @return the issuer.
          */
         @Attribute(order = 1800)
-        String issuer();
+        default String issuer() {
+            return "https://appleid.apple.com";
+        };
 
         /**
          * The openid connect validation method.
