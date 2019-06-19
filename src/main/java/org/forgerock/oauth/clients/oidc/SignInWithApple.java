@@ -154,7 +154,7 @@ public class SignInWithApple extends AbstractSocialAuthLoginNode {
          * The provider. (useful if using IDM)
          * @return the provider.
          */
-        @Attribute(order = 800)
+        @Attribute(order = 800, validators = {RequiredValueValidator.class})
         default String provider() {
             return "Apple ID";
         }
@@ -248,10 +248,11 @@ public class SignInWithApple extends AbstractSocialAuthLoginNode {
          * The issuer. Must be specified to use mixup mitigation.
          * @return the issuer.
          */
-        @Attribute(order = 1800)
+        @Attribute(order = 1800, validators = {RequiredValueValidator.class})
         default String issuer() {
             return "https://appleid.apple.com";
         }
+        
         /**
          * The openid connect validation method.
          * @return the openid connect validation method.
@@ -260,7 +261,6 @@ public class SignInWithApple extends AbstractSocialAuthLoginNode {
         default SocialOpenIdConnectNode.OpenIDValidationMethod openIdValidationMethod() {
             return SocialOpenIdConnectNode.OpenIDValidationMethod.JWK_URL;
         }
-
 
         /**
          * The openid connect validation value.
@@ -273,7 +273,6 @@ public class SignInWithApple extends AbstractSocialAuthLoginNode {
         }
 
     }
-
 
     private static OAuthClientConfiguration getOAuthClientConfiguration(AppleConfig config) {
         AppleClientConfiguration.Builder<?, AppleClientConfiguration> builder =
