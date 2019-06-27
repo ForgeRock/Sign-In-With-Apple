@@ -45,7 +45,7 @@ Next, create a new App ID Identifier and enable "Sign in with Apple"
 ![Create_App_Id](https://github.com/ForgeRock/Sign-In-With-Apple/blob/master/images/Create_App_Id.png?raw=true)
 
 
-After that, create a new Service Identifier. This service Identifier will be the client secret used in the 
+After that, create a new Service Identifier. This service Identifier will be the client id used in the 
 Authentication Node. Note, the Return URLs configured must be running TLS and be configured on port 443.
 
 ![Create_Service_Id](https://github.com/ForgeRock/Sign-In-With-Apple/blob/master/images/Create_Service_Id.png?raw=true)
